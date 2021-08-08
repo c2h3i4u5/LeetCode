@@ -16,10 +16,13 @@ let maxDepth = function (root) {
 };
 
 let maxDepth = function (root) {
+  //Edge case
   if (root === null || root === undefined) return 0;
 
+  //Process
   let left = maxDepth(root.left);
   let right = maxDepth(root.right);
 
+  //Recursion
   return 1 + Math.max(left, right);
 };

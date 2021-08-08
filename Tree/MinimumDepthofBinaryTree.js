@@ -8,18 +8,17 @@
  */
 /**
  * @param {TreeNode} root
- * @return {TreeNode}
+ * @return {number}
  */
-let invertTree = function (root) {
+var minDepth = function (root) {
   //Edge case
   if (root === null) return 0;
 
   //Process
-  let left = root.left;
+  let left = minDepth(root.left);
+  let right = minDepth(root.right);
+  if (left === 0 || right === 0) return left + right + 1;
 
   //Recursion
-  root.left = invertTree(root.right);
-  root.right = invertTree(left);
-
-  return root;
+  return Math.min(left, right) + 1;
 };

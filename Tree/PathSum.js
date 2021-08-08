@@ -12,11 +12,14 @@
  * @return {boolean}
  */
 var hasPathSum = function (root, targetSum) {
+  // Edge case
   if (root === null) return false;
 
+  //Process
   if (root.left === null && root.right === null && root.val === targetSum) {
     return true;
   } else {
+    //Recursion
     return (
       hasPathSum(root.left, targetSum - root.val) ||
       hasPathSum(root.right, targetSum - root.val)
