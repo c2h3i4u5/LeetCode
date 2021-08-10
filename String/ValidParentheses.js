@@ -25,8 +25,6 @@ let isValid = function (s) {
   }
 };
 
-console.log("5278");
-
 // var isValid = function (s) {
 //   if (s.length % 2 !== 0) return false;
 //   let stack = [];
