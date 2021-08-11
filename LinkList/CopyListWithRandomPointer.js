@@ -11,6 +11,7 @@
  * @param {Node} head
  * @return {Node}
  */
+
 var copyRandomList = function (head) {
   let findRandomIndex = function (temp) {
     let random = temp.random;

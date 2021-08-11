@@ -13,7 +13,7 @@ var dailyTemperatures = function (temperatures) {
   for (let curIndex = 0; curIndex < n; curIndex++) {
     while (
       stack.length > 0 &&
-      temperatures[curIndex] > temperatures[stack.length - 1]
+      temperatures[curIndex] > temperatures[stack[stack.length - 1]]
     ) {
       let resultIndex = stack.pop();
       result[resultIndex] = curIndex - resultIndex;
