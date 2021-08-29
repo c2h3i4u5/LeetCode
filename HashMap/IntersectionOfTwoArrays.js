@@ -9,19 +9,21 @@
 
 let intersection = function (nums1, nums2) {
   let result = [];
-  let map1 = new Map();
-  let map2 = new Map();
+  let map = new Map();
+  let resultMap = new Map();
+
   for (let i = 0; i < nums1.length; i++) {
-    map1.set(nums1[i], map1.get(nums1[i]) + 1 || 1);
-  }
-  for (let j = 0; j < nums2.length; j++) {
-    map2.set(nums2[j], map2.get(nums2[j]) + 1 || 1);
+    map.set(nums1[i], nums1[i]);
   }
 
-  for (let k = 0; k < nums2.length; k++) {
-    if (map1.has(nums2[k])) {
-      result.push(nums2[k]);
+  for (let i = 0; i < nums2.length; i++) {
+    if (map.has(nums2[i])) {
+      resultMap.set(nums2[i], nums2[i]);
     }
+  }
+
+  for (let [key, value] of resultMap) {
+    result.push(value);
   }
   return result;
 };
