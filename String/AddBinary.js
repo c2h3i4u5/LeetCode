@@ -37,6 +37,7 @@ let addBinary = function (a, b) {
         bLength--;
       }
     } else {
+      // carry = 1
       if (a[aLength] === "0" && b[bLength] === "0") {
         result = "1" + result;
         carry = 0;
@@ -51,7 +52,7 @@ let addBinary = function (a, b) {
         aLength--;
         bLength--;
       } else {
-        carry = 0;
+        carry = 1;
         result = "1" + result;
         aLength--;
         bLength--;
@@ -65,7 +66,7 @@ let addBinary = function (a, b) {
         result = "0" + result;
         aLength--;
       } else {
-        carry = 1;
+        carry = 0;
         result = "1" + result;
         aLength--;
       }
@@ -88,7 +89,7 @@ let addBinary = function (a, b) {
         result = "0" + result;
         bLength--;
       } else {
-        carry = 1;
+        carry = 0;
         result = "1" + result;
         bLength--;
       }
